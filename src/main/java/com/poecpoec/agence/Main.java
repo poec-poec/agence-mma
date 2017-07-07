@@ -68,6 +68,13 @@ public class Main
         adresse.setVille("Mérignac");
         adresse.setPays("France");
         System.out.println(adresse);
+        
+        
+        //IT#2 Création classe Client + relation adresse.
+        Client client = new Client();
+        client.setAdresse(adresse);
+        
+        System.out.println(client);
     }
 
 }
