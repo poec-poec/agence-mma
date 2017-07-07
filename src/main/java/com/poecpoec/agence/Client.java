@@ -9,120 +9,120 @@ package com.poecpoec.agence;
  */
 public class Client {
 
-    private int id;
-    private String nom;
-    private String numeroTel;
-    private String numeroFax;
-    private String email;
-    private Adresse adresse;
+	private int id;
+	private String nom;
+	private String numeroTel;
+	private String numeroFax;
+	private String email;
+	private Adresse adresse;
 
-    /**
-     * 
-     */
-    public Client() {
-        //this.adresse = adresse;
-    }
+	/**
+	 * 
+	 */
+	public Client() {
+		// this.adresse = adresse;
+	}
 
-    
-    // Les getters et les setters.
-    /**
-     * @return the id
-     */
-    public int getId() {
-        return id;
-    }
+	// Les getters et les setters.
+	/**
+	 * @return the id
+	 */
+	public int getId() {
+		return id;
+	}
 
-    /**
-     * @param id
-     *            the id to set
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
+	/**
+	 * @param id
+	 *            the id to set
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
 
-    /**
-     * @return the nom
-     */
-    public String getNom() {
-        return nom;
-    }
+	/**
+	 * @return the nom
+	 */
+	public String getNom() {
+		return nom;
+	}
 
-    /**
-     * @param nom
-     *            the nom to set
-     */
-    public void setNom(String nom) {
-        this.nom = nom;
-    }
+	/**
+	 * @param nom
+	 *            the nom to set
+	 */
+	public void setNom(String nom) {
+		this.nom = nom;
+	}
 
-    /**
-     * @return the numeroTel
-     */
-    public String getNumeroTel() {
-        return numeroTel;
-    }
+	/**
+	 * @return the numeroTel
+	 */
+	public String getNumeroTel() {
+		return numeroTel;
+	}
 
-    /**
-     * @param numeroTel
-     *            the numeroTel to set
-     */
-    public void setNumeroTel(String numeroTel) {
-        this.numeroTel = numeroTel;
-    }
+	/**
+	 * @param numeroTel
+	 *            the numeroTel to set
+	 */
+	public void setNumeroTel(String numeroTel) {
+		this.numeroTel = numeroTel;
+	}
 
-    /**
-     * @return the numeroFax
-     */
-    public String getNumeroFax() {
-        return numeroFax;
-    }
+	/**
+	 * @return the numeroFax
+	 */
+	public String getNumeroFax() {
+		return numeroFax;
+	}
 
-    /**
-     * @param numeroFax
-     *            the numeroFax to set
-     */
-    public void setNumeroFax(String numeroFax) {
-        this.numeroFax = numeroFax;
-    }
+	/**
+	 * @param numeroFax
+	 *            the numeroFax to set
+	 */
+	public void setNumeroFax(String numeroFax) {
+		this.numeroFax = numeroFax;
+	}
 
-    /**
-     * @return the email
-     */
-    public String getEmail() {
-        return email;
-    }
+	/**
+	 * @return the email
+	 */
+	public String getEmail() {
+		return email;
+	}
 
-    /**
-     * @param email
-     *            the email to set
-     */
-    public void setEmail(String email) {
-        this.email = email;
-    }
+	/**
+	 * @param email
+	 *            the email to set
+	 */
+	public void setEmail(String email) {
+		this.email = email;
+	}
 
-    /**
-     * @return the adresse
-     */
-    public Adresse getAdresse() {
-        return adresse;
-    }
+	/**
+	 * @return the adresse
+	 */
+	public Adresse getAdresse() {
+		return adresse;
+	}
 
-    /**
-     * @param adresse the adresse to set
-     */
-    public void setAdresse(Adresse adresse) {
-        this.adresse = adresse;
-    }
+	/**
+	 * @param adresse
+	 *            the adresse to set
+	 */
+	public void setAdresse(Adresse adresse) {
+		this.adresse = adresse;
+	}
 
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Client [id=" + id + ", nom=" + nom + ", numeroTel=" + numeroTel + ", email=" + email + ", adresse="
+				+ adresse + "]";
+	}
 
-    /* (non-Javadoc)
-     * @see java.lang.Object#toString()
-     */
-    @Override
-    public String toString() {
-        return "Client [id=" + id + ", nom=" + nom + ", numeroTel=" + numeroTel + ", email=" + email + ", adresse="
-                + adresse + "]";
-    }
-    
-    
 }
