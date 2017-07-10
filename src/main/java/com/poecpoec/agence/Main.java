@@ -6,6 +6,10 @@ package com.poecpoec.agence;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.poecpoec.agence.dao.ClientDao;
+import com.poecpoec.agence.model.Adresse;
+import com.poecpoec.agence.model.Client;
+
 /**
  * @author Seme
  */
