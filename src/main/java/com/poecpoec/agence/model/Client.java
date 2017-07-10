@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.poecpoec.agence;
+package com.poecpoec.agence.model;
 
 /**
  * @author Administrateur
@@ -14,6 +14,9 @@ public class Client {
 	private String numeroTel;
 	private String numeroFax;
 	private String email;
+	/**
+	 * L'adresse du client. Relation unidirectionnelle binaire de cardinalité 1..1
+	 */
 	private Adresse adresse;
 
 	/**

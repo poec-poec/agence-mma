@@ -1,5 +1,10 @@
-package com.poecpoec.agence;
+package com.poecpoec.agence.model;
 
+/**
+ * Classe métier ou Objet métier ou PlainOldJavaObject
+ * @author Administrateur
+ *
+ */
 public class Adresse {
 
 	// Attributs
@@ -14,7 +19,7 @@ public class Adresse {
 
 	}
 
-	// Getters(assesseurs) et Setters(mutateurs)
+	// Getters(accesseurs) et Setters(mutateurs)
 	public String getAdresse() {
 		return adresse;
 	}
