@@ -8,7 +8,7 @@ import java.util.List;
 
 import com.poecpoec.agence.dao.AeroportDao;
 import com.poecpoec.agence.dao.ClientDao;
-import com.poecpoec.agence.model.Adresse;
+import com.poecpoec.agence.dao.VilleDao;
 import com.poecpoec.agence.model.Aeroport;
 import com.poecpoec.agence.model.Client;
 import com.poecpoec.agence.model.Ville;
@@ -16,16 +16,20 @@ import com.poecpoec.agence.model.Ville;
 /**
  * @author Seme
  */
-public class Main {
+public class Main
+{
 
     /**
      * @param args
      */
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         /*
          * Tests unitaires itération #1
          */
+        System.out.println("---------");
         System.out.println("Test it#1");
+        System.out.println("---------");
         Aeroport cdg = new Aeroport("CDG");
         Ville paris = new Ville("Paris", "France");
         Ville londres = new Ville("Londres", "UK");
@@ -35,7 +39,9 @@ public class Main {
         /*
          * UT it#2
          */
+        System.out.println("---------");
         System.out.println("Test it#2");
+        System.out.println("---------");
         cdg.ajouterVille(paris);
         cdg.ajouterVille(londres);
         System.out.println(cdg);
@@ -43,13 +49,17 @@ public class Main {
         /*
          * UT it#3
          */
+        System.out.println("---------");
         System.out.println("Test it#3");
+        System.out.println("---------");
         System.out.println(paris);
 
         /*
-         * UT it#4 : test de la connexion à la BDD
+         * UT it#4 : test de la connexion à la BDD (modifié par l'it8)
          */
+        System.out.println("---------");
         System.out.println("Test it#4");
+        System.out.println("---------");
         // déclaration des variables
         List<Aeroport> aeroports = new ArrayList<>();
 
@@ -62,44 +72,38 @@ public class Main {
         // j'affiche mes aéroports
         System.out.println(aeroports);
 
-        System.out.println("Test it#4bis");
-        Aeroport inconnu = aeroportDao.findById(5);
-        System.out.println(inconnu);
-        Aeroport lys = aeroportDao.findById(2);
-        System.out.println(lys);
+        /*
+         * UT it#6: test de la recherche par identifiant (modifié par l'it8)
+         */
+        System.out.println("---------");
+        System.out.println("Test it#6");
+        System.out.println("---------");
+        Aeroport aeroport = aeroportDao.findById(654);
+        aeroport = aeroportDao.findById(1);
+        System.out.println(aeroport);
+
+        /*
+         * UT it#7: test de la recherche par identifiant
+         */
+        System.out.println("---------");
+        System.out.println("Test it#7");
+        System.out.println("---------");
+        // j'instancie du DAO de ville
+        VilleDao villeDao = new VilleDao();
+        Ville ville = villeDao.findById(1);
+        System.out.println(ville);
+        // toutes les villes
+        List<Ville> villes = villeDao.findAll();
+        System.out.println(villes);
 
         // TEAM MMA
-
-        System.out.println("Test MMA it#1");
-        // IT#1 Création classe Adresse
-        Adresse adresse = new Adresse();
-        adresse.setId(1);
-        adresse.setAdresse("15bis, Allée James Watt");
-        adresse.setCodePostal("33700");
-        adresse.setVille("Mérignac");
-        adresse.setPays("France");
-        System.out.println(adresse);
-
-        System.out.println("Test MMA it#2");
-        // IT#2 Création classe Client + relation adresse.
-        Client client = new Client();
-        client.setAdresse(adresse);
-
-        System.out.println(client);
-
-        System.out.println("Test MMA it#3");
+        System.out.println("Test MMA");
         // IT#3 Création client DAO.
         List<Client> clients = new ArrayList<>();
         ClientDao clientDao = new ClientDao();
         clients = clientDao.findAll();
         System.out.println(clients);
 
-        System.out.println("Test MMA it#4");
-        // IT#4 Mise en place des adresses crée
-        for (int i = 0; i < clients.size(); i++) {
-            clients.get(i).setAdresse(adresse);
-        }
-        System.out.println(clients);
     }
 
 }

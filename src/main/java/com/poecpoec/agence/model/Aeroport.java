@@ -11,12 +11,37 @@ import java.util.List;
  */
 public class Aeroport
 {
-    /** Villes desservies par l'aéroport */
-    private List<Ville> villes;
+    /** Identifiant technique */
+    private int         idAero;
+
     /**
      * Nom de l'aéroport
      */
-    private String nom;
+    private String      nom;
+
+    /** Villes desservies par l'aéroport */
+    private List<Ville> villes;
+
+    /**
+     * 
+     */
+    public Aeroport()
+    {
+        super();
+        this.villes = new ArrayList<>();
+    }
+
+    /**
+     * @param idAero
+     * @param nom
+     */
+    public Aeroport(int idAero, String nom)
+    {
+        super();
+        this.idAero = idAero;
+        this.nom = nom;
+        this.villes = new ArrayList<>();
+    }
 
     /**
      * @param villes
@@ -27,6 +52,16 @@ public class Aeroport
         super();
         this.villes = villes;
         this.nom = nom;
+    }
+
+    /**
+     * @param nom
+     */
+    public Aeroport(String nom)
+    {
+        super();
+        this.nom = nom;
+        this.villes = new ArrayList<>();
     }
 
     /**
@@ -41,61 +76,12 @@ public class Aeroport
         ville.ajouterAeroport(this);
     }
 
-    /*
-     * (non-Javadoc)
-     * @see java.lang.Object#toString()
-     */
-    @Override
-    public String toString()
-    {
-        StringBuffer sBuffer = new StringBuffer(
-                "Aeroport [nom= " + this.nom + ", villes=");
-        // boucle de parcours des villes desservies
-        for (Ville ville : villes)
-        {
-            sBuffer.append("[Ville nom=" + ville.getNom() + ", pays="
-                    + ville.getPays() + "],");
-        }
-        sBuffer = new StringBuffer(sBuffer.substring(0, sBuffer.length() - 1));
-        sBuffer.append("]");
-
-        return sBuffer.toString();
-    }
-
     /**
-     * @return the villes
+     * @return the idAero
      */
-    public List<Ville> getVilles()
+    public int getIdAero()
     {
-        return villes;
-    }
-
-    /**
-     * @param villes
-     *            the villes to set
-     */
-    public void setVilles(List<Ville> villes)
-    {
-        this.villes = villes;
-    }
-
-    /**
-     * @param nom
-     */
-    public Aeroport(String nom)
-    {
-        super();
-        this.nom = nom;
-        this.villes = new ArrayList<>();
-    }
-
-    /**
-     * 
-     */
-    public Aeroport()
-    {
-        super();
-        this.villes = new ArrayList<>();
+        return idAero;
     }
 
     /**
@@ -107,12 +93,58 @@ public class Aeroport
     }
 
     /**
+     * @return the villes
+     */
+    public List<Ville> getVilles()
+    {
+        return villes;
+    }
+
+    /**
+     * @param idAero
+     *            the idAero to set
+     */
+    public void setIdAero(int idAero)
+    {
+        this.idAero = idAero;
+    }
+
+    /**
      * @param nom
      *            the nom to set
      */
     public void setNom(String nom)
     {
         this.nom = nom;
+    }
+
+    /**
+     * @param villes
+     *            the villes to set
+     */
+    public void setVilles(List<Ville> villes)
+    {
+        this.villes = villes;
+    }
+
+    /*
+     * (non-Javadoc)
+     * 
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString()
+    {
+        StringBuffer sBuffer = new StringBuffer("Aeroport [nom= " + this.nom + ", villes=");
+        // boucle de parcours des villes desservies
+        for (Ville ville : villes)
+        {
+            sBuffer.append("[Ville nom=" + ville.getNom() + ", pays=" + ville.getPays() + "],");
+        }
+        sBuffer = new StringBuffer(sBuffer.substring(0, sBuffer.length() - 1));
+        sBuffer.append("]");
+
+        return sBuffer.toString();
     }
 
 }

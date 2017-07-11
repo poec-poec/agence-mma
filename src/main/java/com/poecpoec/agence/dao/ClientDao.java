@@ -13,14 +13,16 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.poecpoec.agence.interfaces.IClientDataRecovery;
+import com.poecpoec.agence.interfaces.IDataRecovery;
 import com.poecpoec.agence.model.Client;
 
-public class ClientDao implements IClientDataRecovery {
+public class ClientDao implements IDataRecovery<Client>
+{
     /**
      * Data Access Objet
      */
-    public ClientDao() {
+    public ClientDao()
+    {
 
     }
 
@@ -29,10 +31,13 @@ public class ClientDao implements IClientDataRecovery {
      * 
      * @return Liste de client
      */
-    public List<Client> findAll() {
+    @Override
+    public List<Client> findAll()
+    {
         List<Client> clients = new ArrayList<>();
 
-        try {
+        try
+        {
             // Etape 1 : chargement du driver
             Class.forName("com.mysql.jdbc.Driver");
             // Etape 2 : création de la connexion
@@ -43,7 +48,8 @@ public class ClientDao implements IClientDataRecovery {
             // Etape 4 : Exécuter la requête SQL
             ResultSet resultats = statement.executeQuery("SELECT * FROM client");
             // Etape 5 : boucle de parcours des résultats
-            while (resultats.next()) {
+            while (resultats.next())
+            {
                 // je crée un client vide
                 Client client = new Client();
                 client.setId(resultats.getInt("idCli"));
@@ -60,12 +66,28 @@ public class ClientDao implements IClientDataRecovery {
             statement.close();
             // Etape 8 : fermer la connexion
             connexion.close();
-        } catch (ClassNotFoundException e) {
+        }
+        catch (ClassNotFoundException e)
+        {
             System.out.println("Impossible de charger le driver. Vérifier votre classpath.");
-        } catch (SQLException e) {
+        }
+        catch (SQLException e)
+        {
             System.out.println("Erreur SQL. Voir ci-après.");
             System.out.println(e.getMessage());
         }
         return clients;
+    }
+
+    /*
+     * (non-Javadoc)
+     * 
+     * @see com.poecpoec.agence.interfaces.IDataRecovery#findById(int)
+     */
+    @Override
+    public Client findById(int id)
+    {
+        // TODO Auto-generated method stub
+        return null;
     }
 }
