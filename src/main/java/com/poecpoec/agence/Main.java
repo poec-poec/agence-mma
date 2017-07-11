@@ -102,30 +102,38 @@ public class Main
         // System.out.println(clients);
 
         // TU#1 tests Adresse
-        System.out.println("---------");
+        System.out.println("--------------------------------------------");
         System.out.println("TU#1 - Adresses seules (findAll et findById)");
-        System.out.println("---------");
+        System.out.println("--------------------------------------------");
+        System.out.println("Liste adresses :\n");
         AdresseDao adresseDao = new AdresseDao();
         List<Adresse> adresses = adresseDao.findAll();
         System.out.println(adresses);
+        System.out.println("---------");
 
+        System.out.println("2 cas d'adresses seules par leur ID :\n");
         Adresse adrInconnue = adresseDao.findById(8);
         System.out.println(adrInconnue);
         Adresse adrConnue = adresseDao.findById(1);
         System.out.println(adrConnue);
+        System.out.println("---------");
 
         // TU#2 tests Client
-        System.out.println("---------");
+        System.out.println("-----------------------------------------------");
         System.out.println("TU#1 - Clients + Adresses (findAll et findById)");
-        System.out.println("---------");
+        System.out.println("-----------------------------------------------");
+        System.out.println("Liste Clients avec leur adresse :\n");
         ClientDao clientDao = new ClientDao();
         List<Client> clients = clientDao.findAll();
         System.out.println(clients);
+        System.out.println("---------");
 
+        System.out.println("2 cas de clients seuls avec leur adresse par leur ID :\n");
         Client clientInconnu = clientDao.findById(8);
         System.out.println(clientInconnu);
         Client clientConnu = clientDao.findById(1);
         System.out.println(clientConnu);
+        System.out.println("---------");
 
     }
 
