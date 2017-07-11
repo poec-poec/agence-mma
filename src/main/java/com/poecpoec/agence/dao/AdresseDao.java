@@ -78,7 +78,8 @@ public class AdresseDao implements IDataRecovery<Adresse>
             // Etape 3 : création du statement
             Statement statement = connexion.createStatement();
             // Etape 4 : Exécuter la requête SQL
-            ResultSet resultats = statement.executeQuery("SELECT * FROM adresse WHERE idAdr = " + id);
+            ResultSet resultats = statement
+                    .executeQuery("SELECT * FROM adresse WHERE idAdr = " + id);
             // Etape 5 : boucle de parcours des résultats
             if (resultats.next())
             {
@@ -106,7 +107,7 @@ public class AdresseDao implements IDataRecovery<Adresse>
         }
         return adresse;
     }
-    
+
     public Adresse findByClientId(int id)
     {
         Adresse adresse = new Adresse();
@@ -121,7 +122,8 @@ public class AdresseDao implements IDataRecovery<Adresse>
             // Etape 3 : création du statement
             Statement statement = connexion.createStatement();
             // Etape 4 : Exécuter la requête SQL
-            ResultSet resultats = statement.executeQuery("SELECT * FROM adresse WHERE idCli = " + id);
+            ResultSet resultats = statement
+                    .executeQuery("SELECT * FROM adresse WHERE idCli = " + id);
             // Etape 5 : boucle de parcours des résultats
             if (resultats.next())
             {

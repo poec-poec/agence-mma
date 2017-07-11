@@ -59,7 +59,7 @@ public class ClientDao implements IDataRecovery<Client>
                 client.setPrenom(resultats.getString("prenom"));
                 client.setNumeroTel(resultats.getString("telephone"));
                 client.setEmail(resultats.getString("email"));
-                
+
                 // je récupère ensuite son adresse
                 Adresse adresse = adresseDao.findByClientId(client.getId());
                 client.setAdresse(adresse);
@@ -106,7 +106,8 @@ public class ClientDao implements IDataRecovery<Client>
             // Etape 3 : création du statement
             Statement statement = connexion.createStatement();
             // Etape 4 : Exécuter la requête SQL
-            ResultSet resultats = statement.executeQuery("SELECT * FROM client WHERE idCli = " + id);
+            ResultSet resultats = statement
+                    .executeQuery("SELECT * FROM client WHERE idCli = " + id);
             // Etape 5 : boucle de parcours des résultats
             if (resultats.next())
             {
@@ -115,7 +116,7 @@ public class ClientDao implements IDataRecovery<Client>
                 client.setPrenom(resultats.getString("prenom"));
                 client.setNumeroTel(resultats.getString("telephone"));
                 client.setEmail(resultats.getString("email"));
-                
+
                 // je récupère ensuite son adresse
                 Adresse adresse = adresseDao.findByClientId(client.getId());
                 client.setAdresse(adresse);
