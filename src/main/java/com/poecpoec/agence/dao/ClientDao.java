@@ -46,7 +46,7 @@ public class ClientDao implements IClientDataRecovery {
             while (resultats.next()) {
                 // je crée un client vide
                 Client client = new Client();
-                client.setId(resultats.getInt("id"));
+                client.setId(resultats.getInt("idCli"));
                 client.setNom(resultats.getString("nom"));
                 client.setNumeroTel(resultats.getString("telephone"));
                 client.setEmail(resultats.getString("email"));

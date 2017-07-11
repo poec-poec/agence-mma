@@ -11,11 +11,12 @@ import com.poecpoec.agence.model.Aeroport;
  * @author Seme
  *
  */
-public interface IAeroportDataRecovery
-{
+public interface IAeroportDataRecovery {
     /**
      * 
      * @return
      */
-    public abstract List<Aeroport> findAll();        
+    public abstract List<Aeroport> findAll();
+    
+    public abstract Aeroport findById(int id);
 }
